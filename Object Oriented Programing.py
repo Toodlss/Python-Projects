@@ -16,7 +16,7 @@ class Mage(Player):
     def __init__(self, gold, level, health, manna):
         super().__init__(gold, level)
         self.health = health
-        self.mana = manna
+        self.manna = manna
 
 # Objects
 player1 = Warrior(2, 3, 100, 50)
