@@ -11,13 +11,13 @@ conn = sqlite3.connect("files.db")
 fileList =('information.docx', 'Hello.txt', 'myImage.png',
            'myMovie.mpg', 'World.txt', 'data.pdf', 'myPhoto.jpg')
 
-# loop through each object in the tuple to find the names that end in y.
+# loop through each object in the tuple to find file ends with .txt.
 for x in fileList:
     if x.endswith('.txt'):
         with conn:
             cur = conn.cursor()
-            # The value for each row will be one name out of the tuple therefore (x,)
-            # will denote a one element tuple for each name ending with y.
+            # The value for each row will be one file out of the tuple therefore (x,)
+            # will denote a one element tuple for each file ending with .txt.
             cur.execute("INSERT INTO tbl_files (filename) VALUES (?)", (x,))
             print(x)
 
